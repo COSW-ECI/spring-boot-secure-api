@@ -22,13 +22,13 @@ compile('io.jsonwebtoken:jjwt:0.6.0')
 
 4) Run the project using the Gradle command *bootRun*.
 
-5) Try that authentication works with the following command from the console:
+5) Verify that authentication works with the following command (from the console):
 
 ```
 curl -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password":"password"}' http://localhost:8080/user/login
 ```
 
-6) Implement the API for the TODO objects. In order to do that you need to follow the next steps:
+6) Implement the API for the TODO object. In order to do that you need to follow the next steps:
 
 * Create a model class for the TODO object inside the models package.
 * Create a *TodoService* and *TodoServiceImpl* that has the following methods and the corresponding implementations:
