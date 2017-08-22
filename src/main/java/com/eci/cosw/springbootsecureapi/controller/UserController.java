@@ -22,12 +22,6 @@ public class UserController
     @Autowired
     private UserService userService;
 
-    @RequestMapping( value = "/register", method = RequestMethod.POST )
-    public User registerUser( @RequestBody User user )
-    {
-        return null;
-    }
-
     @RequestMapping( value = "/login", method = RequestMethod.POST )
     public Token login( @RequestBody User login )
         throws ServletException
