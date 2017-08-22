@@ -132,7 +132,7 @@ export class AppDataService {
 ```
 
 5. Create an AuthService service `app/common/auth.service.ts` that will manage the local session info, add the service as a provider in the main module
-```
+```typescript
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router, CanActivate } from '@angular/router';
@@ -151,6 +151,7 @@ export class AuthService implements CanActivate {
   public set accessToken(accessToken: string) {
     this.appData.accessToken = accessToken;
   }
+
   public isLoggedIn(): boolean {
     return this.appData.accessToken != null && this.appData.accessToken !== undefined;
   }
