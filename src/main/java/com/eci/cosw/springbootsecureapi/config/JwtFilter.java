@@ -16,19 +16,19 @@ public class JwtFilter
     extends GenericFilterBean
 {
 
-    public void doFilter( final ServletRequest req, final ServletResponse res, final FilterChain chain )
+    public void doFilter( final ServletRequest servletRequest, final ServletResponse response, final FilterChain filterChain )
         throws IOException, ServletException
     {
 
-/*        final HttpServletRequest request = (HttpServletRequest) req;
-        final HttpServletResponse response = (HttpServletResponse) res;
+/*        final HttpServletRequest request = (HttpServletRequest) servletRequest;
+        final HttpServletResponse response = (HttpServletResponse) response;
         final String authHeader = request.getHeader( "authorization" );
 
         if ( "OPTIONS".equals( request.getMethod() ) )
         {
             response.setStatus( HttpServletResponse.SC_OK );
 
-            chain.doFilter( req, res );
+            filterChain.doFilter( servletRequest, response );
         }
         else
         {
@@ -50,7 +50,7 @@ public class JwtFilter
                 throw new ServletException( "Invalid token" );
             }
 
-            chain.doFilter( req, res );
+            filterChain.doFilter( servletRequest, response );
         }*/
     }
 }
