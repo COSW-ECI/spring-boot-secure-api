@@ -6,9 +6,6 @@
 * Implementation to consume the API from an Angular JS project.
 
 
-Download the sources from this repo, run the project to verify it works.
-
-
 ### Part 1: Implement API
 
 
@@ -23,4 +20,11 @@ compile('io.jsonwebtoken:jjwt:0.6.0')
 
 3) Go to the class *UserController* and uncomment the lines 60 and 61.
 
-4)  
+4) Run the project using the Gradle command *bootRun*.
+
+5) Try that authentication works with the following command from the console:
+
+```
+curl -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password":"password"}' http://localhost:8080/user/login
+```
+
