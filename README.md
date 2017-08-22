@@ -39,6 +39,13 @@ curl -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password
     ```
 * Make sure you use correctly the annotations [@Autowired](https://stackoverflow.com/questions/19414734/understanding-spring-autowired-usage) and [@Service](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Service.html) in order to do the proper dependencies injection configuration.
 
+7) Create the *TodoController* to handle the API request that will handle the TODO logic and annotate the class with the following annotations:
+
+    ````
+    @RestController
+    @RequestMapping( "api" )
+    ````
+
 
 ### Part 2: Consume API from AngularJS project
 
