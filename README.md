@@ -343,7 +343,7 @@ const ROUTES = [
   signOut() {
     this.authService.signOut();
   }
-}
+...
 ```
 
 13. Add a logout option on the main menu `app.component.html`
@@ -389,7 +389,34 @@ export class TodoService extends APIService {
   }
 ...
 ```
+3.Adjust the *task-list-page.component.ts* to suscribe to the server response:
 
-3. Investigate about asynchronous observable concept that Angular use (Reactive Programming). 
+ ```typescript
+... 
+  ngOnInit() {
+     this.todoService.list().subscribe(todosResponse=>{
+       this.todos = todosResponse;
+     })
+   }
+...   
+```
+4. Investigate about asynchronous observable concept that Angular use (Reactive Programming). 
 Once you understand implement the create method on the *todo.service.ts* to make a call to the *post* 
 function created before on the *api.service.ts* to send the TODO object to the server API.
+
+5. Adjust the *task-edit-page.component.ts* file to subscribe to the POST request observer when submitting the form
+```typescript
+...
+ onSubmit() {
+    this.todoService.create(
+      this.todoForm.get('description').value,
+      this.todoForm.get('priority').value,
+      Boolean(this.todoForm.get('completed').value)
+    ).subscribe(serverResponse=>{
+        this.router.navigate(['/tasks']);
+    }, error=>{
+      console.log(error);
+    });
+  }
+...  
+```
